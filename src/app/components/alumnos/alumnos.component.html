@@ -1,0 +1,49 @@
+<div class="card text-bg-light mb-3">
+  <div class="card-header">
+    <h1>{{titulo}}</h1>
+  </div>
+  <div class="card-body">
+    <div class="alert alert-info" *ngIf="lista.length == 0">
+      No hay alumnos registrados
+    </div>
+    <table class="table table-striped" *ngIf="lista?.length > 0">
+      <thead>
+        <tr>
+          <th>id</th>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>Email</th>
+          <th>Creado en </th>
+          <th>Editar</th>
+          <th>Eliminar</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let alumno of lista">
+          <td>{{alumno.id}}</td>
+          <td>{{alumno.nombre | uppercase}}</td>
+          <td>{{alumno.apellido| uppercase}}</td>
+          <td>{{alumno.email}}</td>
+          <td>{{alumno.createAt | date:'dd/MM/YYYY'}}</td>
+          <td><button class="btn btn-outline-success " [routerLink]="['/alumnos/form',alumno.id]">Editar</button></td>
+          <td><button class="btn btn-outline-danger " (click)="eliminarAlumno(alumno)">Eliminar</button></td>
+
+        </tr>
+      </tbody>
+    </table>
+    <mat-paginator
+    [length]="totalRegistro"
+    [pageSize]="totalPagina"
+    [pageIndex]="paginaActual"
+     [pageSizeOptions]="pageSizeOptions"
+     (page)="cambiarPagina($event)"
+     showFirstLastButtons="true"
+     class="float-left mx-2"
+     >
+    </mat-paginator>
+  </div>
+   <div class="d-flex justify-content-center">
+    <button class="btn btn-primary my-4" routerLink="/alumnos/form">Agregar Alumno</button>
+  </div>
+
+</div>
