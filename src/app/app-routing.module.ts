@@ -6,6 +6,7 @@ import { ExamenesComponent } from './components/examenes/examenes.component';
 import { AlumnosFormComponent } from './components/alumnos/formulario-alumno/alumnos-form.component';
 import { FormularioEditarCursoComponent } from './components/cursos/formulario-editar-curso/formulario-editar-curso.component';
 import { FormularioEditarExamenComponent } from './components/examenes/formulario-editar-examen/formulario-editar-examen.component';
+import { AsignarAlumnosComponent } from './components/cursos/asignar-alumnos.component';
 
 
 const routes: Routes = [
@@ -19,6 +20,7 @@ const routes: Routes = [
   {path: 'examenes', component: ExamenesComponent},
   {path: 'examenes/form', component: FormularioEditarExamenComponent},
   {path: 'examenes/form/:id', component: FormularioEditarExamenComponent},
+  {path: 'cursos/asignaralumnos/:id', component: AsignarAlumnosComponent},
 ];
 
 @NgModule({

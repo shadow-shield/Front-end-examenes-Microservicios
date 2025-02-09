@@ -40,6 +40,11 @@ export class AlumnoService extends ComunesService<Alumno> {
     return this.http.put<Alumno>(`${this.baseEndpoint}/updateFoto/${alumno.id}`, formData);
   }
 
+  public filtrarPorNombre(nombre:string):Observable<Alumno[]>{
+    return this.http.get<Alumno[]>(`${this.baseEndpoint}/fltraralumno/${nombre}`);
+  }
+
+
 
 
 

@@ -36,8 +36,6 @@ export abstract class ComuneslistarComponent<E extends Generic, S extends Comune
 
   private calcularRango(): void {
 
-
-
     this.service.listarPaginas(this.paginaActual.toString(), this.totalPagina.toString()).subscribe(
       p => {
         this.lista = p.content as E[];

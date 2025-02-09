@@ -22,15 +22,14 @@
       <tbody>
         <tr *ngFor="let alumno of lista">
 
+          <td>{{alumno.id}}</td>
           <td>
             <img *ngIf="!alumno.fotoHashCode"
               [src]="baseEndpoint+'/editarfoto/img/'+ alumno.id + '?fotoHashCode='+ alumno.fotoHashCode"
               class="img-thumbnail rounded" style="width: 100px; height: 100px;  cursor: pointer;">
-            <img *ngIf="alumno.fotoHashCode"
-              src="icons/nouser.png"
-              class="img-thumbnail rounded" style="width: 100px; height: 100px;  cursor: pointer;">
+            <img *ngIf="alumno.fotoHashCode" src="icons/nouser.png" class="img-thumbnail rounded"
+              style="width: 100px; height: 100px;  cursor: pointer;">
           </td>
-          <td>{{alumno.id}}</td>
           <td>{{alumno.nombre | uppercase}}</td>
           <td>{{alumno.apellido| uppercase}}</td>
           <td>{{alumno.email}}</td>
