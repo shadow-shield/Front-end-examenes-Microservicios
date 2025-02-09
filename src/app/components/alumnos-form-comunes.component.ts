@@ -20,16 +20,20 @@ export abstract class ComunesFormComponent<E extends Generic, S extends ComunesS
     this.routes.paramMap.subscribe(params => {
       const id:number = +params.get('id');
       if (id) {
-        this.service.ver(id).subscribe(model =>this.model=model);
+        this.service.ver(id).subscribe(m =>{
+          this.model=m,
+          this.titulo = 'Editar ' + this.nombreModel;
+        });
       }
-    })
+    });
+
   }
 
-  editarAlumno(): void {
+  public editar(): void {
     this.service.editar(this.model)
       .subscribe(model => {
         console.log(model);
-        Swal.fire('Actualizado:', `${this.nombreModel} ${model.nombre.toUpperCase()} } actualizado con éxito`, 'success');
+        Swal.fire('Actualizado:', `${this.nombreModel} ${model.nombre.toUpperCase()}  actualizado con éxito`, 'success');
         this.router.navigate([this.redirect]);
       }, err => {
         if (err.status === 400) {
@@ -41,7 +45,7 @@ export abstract class ComunesFormComponent<E extends Generic, S extends ComunesS
 
 
 
-  crearAlumno(): void {
+   public crear(): void {
     this.service.crear(this.model)
       .subscribe(model => {
         console.log(model);

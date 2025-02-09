@@ -9,9 +9,13 @@ import { ExamenesComponent } from './components/examenes/examenes.component';
 import { LayoutModule } from './layout/layout.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { AlumnosFormComponent } from './components/alumnos/alumnos-form.component';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import { AlumnosFormComponent } from './components/alumnos/formulario-alumno/alumnos-form.component';
+import { FormularioEditarCursoComponent } from './components/cursos/formulario-editar-curso/formulario-editar-curso.component';
+import { FormularioEditarExamenComponent } from './components/examenes/formulario-editar-examen/formulario-editar-examen.component';
+
 
 @NgModule({
   declarations: [
@@ -20,6 +24,9 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     CursosComponent,
     ExamenesComponent,
     AlumnosFormComponent,
+    FormularioEditarCursoComponent,
+    FormularioEditarExamenComponent,
+
 
   ],
   imports: [

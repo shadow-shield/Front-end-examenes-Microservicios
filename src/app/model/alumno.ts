@@ -9,4 +9,5 @@ export class Alumno implements Generic {
   fotoHashCode: number;
 
 
+
 }

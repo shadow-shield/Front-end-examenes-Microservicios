@@ -47,7 +47,7 @@ export abstract class ComuneslistarComponent<E extends Generic, S extends Comune
     );
   }
 
-  eliminarAlumno(entity: E): void {
+  eliminar(entity: E): void {
     Swal.fire({
       title: `Cuidado:  ¿Seguro que desea eliminar el alumno ${entity.nombre.toUpperCase()} ?`,
       showDenyButton: true,
@@ -59,7 +59,7 @@ export abstract class ComuneslistarComponent<E extends Generic, S extends Comune
         this.service.eliminar(entity.id).subscribe(() => {
           this.lista = this.lista.filter(a => a !== entity);
 
-          Swal.fire('Eliminado:', `Alumno ${entity.nombre.toUpperCase()}} eliminado con éxito`, 'success');
+          Swal.fire('Eliminado:', `Alumno ${entity.nombre.toUpperCase()} eliminado con éxito`, 'success');
           this.calcularRango();
         });
 

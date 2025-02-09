@@ -32,12 +32,12 @@ export  abstract class ComunesService <T extends Generic>{
     return this.http.get<T>(`${this.baseEndpoint}/${id}`);
   }
 
-  public crear(entity: T): Observable<T> {
-    return this.http.post<T>(this.baseEndpoint, entity, { headers: this.cabeceras });
+  public crear(t: T): Observable<T> {
+    return this.http.post<T>(this.baseEndpoint, t, { headers: this.cabeceras });
   }
 
-  public editar(entity: T): Observable<T> {
-    return this.http.put<T>(`${this.baseEndpoint}/${entity.id}`, entity, { headers: this.cabeceras });
+  public editar(t: T): Observable<T> {
+    return this.http.put<T>(`${this.baseEndpoint}/${t.id}`, t, { headers: this.cabeceras });
   }
 
   public eliminar(id: number): Observable<void> {

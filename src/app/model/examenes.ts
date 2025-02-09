@@ -7,6 +7,7 @@ export class Examenes implements Generic {
   nombre: string;
   createAt: string;
   preguntas: Pregunta[] = [];
-  asignatura: Asignatura;
+  asignaturapadre: Asignatura;
+  asignaturahijo: Asignatura;
   respondido: boolean;
 }

@@ -12,24 +12,32 @@
       <label for="nombre">Nombre</label>
     </div>
     <div class="form-floating mb-3">
-      <input type="text" name="apellido" class="form-control"  placeholder="Apellido" [(ngModel)]="model.apellido" id="apellido">
+      <input type="text" name="apellido" class="form-control" placeholder="Apellido" [(ngModel)]="model.apellido"
+        id="apellido">
       <div class="alert alert-danger" *ngIf="errores && errores.apellido">
         {{errores.apellido}}
       </div>
       <label for="apellido">Apellido</label>
     </div>
     <div class="form-floating mb-3">
-      <input type="email"  name="email"  class="form-control" placeholder="Nombre" [(ngModel)]="model.email" id="email">
+      <input type="email" name="email" class="form-control" placeholder="Nombre" [(ngModel)]="model.email" id="email">
       <div class="alert alert-danger" *ngIf="errores && errores.email">
         {{errores.email}}
       </div>
       <label for="email">Email</label>
     </div>
+    <div class="form-group">
+      <div class="mb-3">
+        <label for="formFile" class="form-label">Selecionar foto</label>
+        <input (change)="cargarFoto($event)" class="form-control" type="file" id="formFile">
+      </div>
+    </div>
     <div class="form-group d-flex justify-content-end gap-3">
       <button class="btn btn-danger my-4" routerLink="/alumnos">Volver</button>
-      <button class="btn btn-success my-4" (click)="model.id? editarAlumno(): crearAlumno()">{{model.id  ? 'Editar' :'Guardar'}}</button>
+      <button class="btn btn-success my-4" (click)="model.id? editar(): crear()">{{model.id ? 'Editar'
+        :'Guardar'}}</button>
+
     </div>
 
   </div>
 </div>
-
